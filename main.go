@@ -218,6 +218,7 @@ func isListening(client *http.Client, url, method string) bool {
 	}
 
 	req.Header.Add("Connection", "close")
+	req.Header.Add("X-Intigriti-Username", "viljums")
 	req.Close = true
 
 	resp, err := client.Do(req)
